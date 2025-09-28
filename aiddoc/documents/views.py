@@ -6,7 +6,7 @@ from .serializers import DocumentSerializer
 # from .langchain_utils.chains import build_qa_chain
 
 class UploadDocumentView(APIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
         serializer = DocumentSerializer(data=request.data)
@@ -16,7 +16,7 @@ class UploadDocumentView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ListDocumentsView(APIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
         docs = Document.objects.filter(user=request.user)

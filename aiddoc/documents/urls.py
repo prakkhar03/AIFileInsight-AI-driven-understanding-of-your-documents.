@@ -3,6 +3,6 @@ from .views import UploadDocumentView, ListDocumentsView
 
 urlpatterns = [
     path('upload/', UploadDocumentView.as_view(), name='upload-document'),
-    path('documents/', ListDocumentsView.as_view(), name='list-documents'),
+    path('list/', ListDocumentsView.as_view(), name='list-documents'),
 #     path('query/', QueryDocumentView.as_view(), name='query-document'),
  ]
