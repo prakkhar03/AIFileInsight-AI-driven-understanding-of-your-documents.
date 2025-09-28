@@ -1,0 +1,76 @@
+{
+  "info": {
+    "name": "DocuGenie API",
+    "_postman_id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",
+    "description": "Postman collection for DocuGenie Django + LangChain backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload Document",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Token <your_user_token>", "type": "text" }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/upload/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "upload"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Documents",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Token <your_user_token>", "type": "text" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/documents/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "documents"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Query Document",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Token <your_user_token>", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"doc_id\": \"<document-uuid>\",\n    \"query\": \"Explain the main idea of this document\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/query/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api", "query"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

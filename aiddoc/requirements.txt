@@ -1,0 +1,7 @@
+Django
+djangorestframework
+langchain
+google-generativeai
+python-dotenv
+faiss-cpu
+PyPDF2
