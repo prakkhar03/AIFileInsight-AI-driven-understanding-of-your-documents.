@@ -6,7 +6,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 
-
 def build_qa_chain(file_path):
     # Load and split the document into chunks
     documents = load_document(file_path)
